@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h2 class="post-title" itemprop="name headline">{{ page.title | escape }}</h2>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="pagination">
+    {% if page.previous %}
+    <a href="{{ page.previous.url }}">Previous</a>
+    {% endif %}
+
+    {% if page.next %}
+    <a href="{{ page.next.url }}">Next</a>
+    {% endif %}
+  </div>
+
+</article>

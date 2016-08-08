@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <section class="post-list">
+    {% assign post_index = site.posts | size %}
+    {% for post in site.posts %}
+      <article class="post-article">
+        <h2 itemprop="name headline">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"><span class="post-number">&#8470; {{ post_index }} &bull; </span> {{ post.title | escape }}</a>
+        </h2>
+        <div class="post-content">{{ post.content | markdownify }}</div>
+      </article>
+      {% assign post_index = post_index | minus: 1 %}
+    {% endfor %}
+  </section>
+
+</div>
